@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
            xsi:type="TaskPaneApp">
   <Id>de1b1b3e-2b2a-4a1f-9c01-aaa000111222</Id>
-  <Version>1.0.0.0</Version>
+  <Version>1.0.1.0</Version>
   <ProviderName>m3ez</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
 
@@ -33,4 +34,55 @@
   </DefaultSettings>
 
   <Permissions>ReadWriteDocument</Permissions>
+
+  <!-- === Ribbon button (Home tab) === -->
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
+    <Hosts>
+      <Host xsi:type="Workbook">
+        <DesktopFormFactor>
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <OfficeTab id="TabHome">
+              <Group id="mini.Group" label="Mini Hello Excel" icon="https://m3ez.github.io/sample-add-in-excel/icon-32.png">
+                <Control xsi:type="Button" id="mini.Button.Hello">
+                  <Label resid="resid.Label.Hello"/>
+                  <Supertip>
+                    <Title resid="resid.TipTitle.Hello"/>
+                    <Description resid="resid.TipDesc.Hello"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="resid.Icon.16"/>
+                    <bt:Image size="32" resid="resid.Icon.32"/>
+                    <bt:Image size="80" resid="resid.Icon.80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>ButtonPane</TaskpaneId>
+                    <SourceLocation resid="resid.Url.Taskpane"/>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+
+    <!-- Resources (labels, icons, URLs) -->
+    <Resources>
+      <bt:Images>
+        <bt:Image id="resid.Icon.16" DefaultValue="https://m3ez.github.io/sample-add-in-excel/icon-16.png"/>
+        <bt:Image id="resid.Icon.32" DefaultValue="https://m3ez.github.io/sample-add-in-excel/icon-32.png"/>
+        <bt:Image id="resid.Icon.80" DefaultValue="https://m3ez.github.io/sample-add-in-excel/icon-80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="resid.Url.Taskpane" DefaultValue="https://m3ez.github.io/sample-add-in-excel/taskpane.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="resid.Label.Hello" DefaultValue="Say Hello"/>
+        <bt:String id="resid.TipTitle.Hello" DefaultValue="Say Hello"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="resid.TipDesc.Hello" DefaultValue="Open the task pane and write Hello into cell A1."/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
 </OfficeApp>
