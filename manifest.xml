@@ -4,19 +4,18 @@
            xsi:type="TaskPaneApp">
   <Id>de1b1b3e-2b2a-4a1f-9c01-aaa000111222</Id>
   <Version>1.0.0.0</Version>
-  <ProviderName>Your Name</ProviderName>
+  <ProviderName>m3ez</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
 
   <DisplayName DefaultValue="Mini Hello Excel"/>
   <Description DefaultValue="Smallest Excel Online add-in (task pane)"/>
 
-  <!-- Change to your HTTPS origin -->
-  <IconUrl DefaultValue="https://YOUR-DOMAIN/icon-32.png"/>
-  <HighResolutionIconUrl DefaultValue="https://YOUR-DOMAIN/icon-80.png"/>
-  <SupportUrl DefaultValue="https://YOUR-DOMAIN/"/>
+  <IconUrl DefaultValue="https://m3ez.github.io/sample-add-in-excel/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://m3ez.github.io/sample-add-in-excel/icon-80.png"/>
+  <SupportUrl DefaultValue="https://m3ez.github.io/sample-add-in-excel/"/>
 
   <AppDomains>
-    <AppDomain>https://YOUR-DOMAIN</AppDomain>
+    <AppDomain>https://m3ez.github.io</AppDomain>
   </AppDomains>
 
   <Hosts>
@@ -30,7 +29,7 @@
   </Requirements>
 
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://YOUR-DOMAIN/taskpane.html"/>
+    <SourceLocation DefaultValue="https://m3ez.github.io/sample-add-in-excel/taskpane.html"/>
   </DefaultSettings>
 
   <Permissions>ReadWriteDocument</Permissions>
